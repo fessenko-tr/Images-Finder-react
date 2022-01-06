@@ -12,13 +12,13 @@ import useFetch from "./hooks/useFetch";
 import useModal from "./hooks/useModal";
 
 function App() {
-  const { handleFormSubmit, pics, isLoading, maxPageReached, updatePage } =
+  const { handleUserInput, pics, isLoading, maxPageReached, updatePage } =
     useFetch();
   const [modal, openModal, closeModal] = useModal();
 
   return (
     <div className={s.App}>
-      <Searchbar handleFormSubmit={handleFormSubmit} />
+      <Searchbar handleFormSubmit={handleUserInput} />
 
       <ImageGallery openModal={openModal} picsArray={pics} />
 

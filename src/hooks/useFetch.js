@@ -40,7 +40,7 @@ export default function useFetch() {
     fetchPics();
   }, [userInput, page]);
 
-  function handleFormSubmit(userValue) {
+  function handleUserInput(userValue) {
     if (userValue === userInput && page === 1) {
       return;
     }
@@ -65,5 +65,5 @@ export default function useFetch() {
     }
   }
 
-  return { handleFormSubmit, pics, isLoading, maxPageReached, updatePage };
+  return { handleUserInput, pics, isLoading, maxPageReached, updatePage };
 }
