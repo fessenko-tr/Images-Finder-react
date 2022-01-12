@@ -21,7 +21,7 @@ function ImageGalleryItem({ imgPreview, imgModal, toggleModal }) {
 ImageGalleryItem.propTypes = {
   imgPreview: PropTypes.string.isRequired,
   imgModal: PropTypes.string.isRequired,
-  openModal: PropTypes.func.isRequired,
+  toggleModal: PropTypes.func.isRequired,
 };
 
 export default ImageGalleryItem;

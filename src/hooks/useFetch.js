@@ -29,6 +29,8 @@ export default function useFetch() {
         setPics([...pics, ...data.hits]);
 
         isMaxPageReached(data.hits);
+
+        // smoothScroll(galleryRef.firstElementChild.getBoundingClientRect().height * 2);
       } catch (error) {
         toast.info(error.message);
         setMaxPageReached(true);
@@ -39,6 +41,13 @@ export default function useFetch() {
 
     fetchPics();
   }, [userInput, page]);
+
+  useEffect(() => {
+    if (page === 1) {
+      return;
+    }
+    window.scrollTo({ top: 400, behavior: "smooth" });
+  }, [pics]);
 
   function handleUserInput(userValue) {
     if (userValue === userInput && page === 1) {

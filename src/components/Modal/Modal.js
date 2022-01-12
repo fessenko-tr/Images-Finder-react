@@ -34,7 +34,7 @@ function Modal({ toggleModal, modalImg }) {
 }
 
 Modal.propTypes = {
-  closeModal: PropTypes.func.isRequired,
+  toggleModal: PropTypes.func.isRequired,
   modalImg: PropTypes.string.isRequired,
 };
 

@@ -15,7 +15,7 @@ function ImageGallery({ picsArray, toggleModal }) {
 }
 ImageGallery.propTypes = {
   picsArray: PropTypes.arrayOf(PropTypes.object).isRequired,
-  openModal: PropTypes.func.isRequired,
+  toggleModal: PropTypes.func.isRequired,
 };
 
 export default ImageGallery;
