@@ -14,20 +14,20 @@ import useModal from "./hooks/useModal";
 function App() {
   const { handleUserInput, pics, isLoading, maxPageReached, updatePage } =
     useFetch();
-  const [modal, openModal, closeModal] = useModal();
+  const [modal, toggleModal] = useModal();
 
   return (
     <div className={s.App}>
       <Searchbar handleFormSubmit={handleUserInput} />
 
-      <ImageGallery openModal={openModal} picsArray={pics} />
+      <ImageGallery toggleModal={toggleModal} picsArray={pics} />
 
       {isLoading && <Loading />}
 
       {!isLoading && !maxPageReached && <Button loadMore={updatePage} />}
 
       {modal.isModalOpened && (
-        <Modal closeModal={closeModal} modalImg={modal.modalURL} />
+        <Modal toggleModal={toggleModal} modalImg={modal.modalURL} />
       )}
       <ToastContainer />
     </div>

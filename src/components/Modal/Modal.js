@@ -5,11 +5,11 @@ import { useEffect } from "react";
 
 const modalRoot = document.getElementById("modal");
 
-function Modal({ closeModal, modalImg }) {
+function Modal({ toggleModal, modalImg }) {
   function close(e) {
     console.log("im here");
     if (e.code === "Escape") {
-      closeModal();
+      toggleModal();
     }
   }
 
@@ -24,7 +24,7 @@ function Modal({ closeModal, modalImg }) {
   const { modal, overlay, modalImage } = s;
 
   return createPortal(
-    <div onClick={closeModal} className={overlay}>
+    <div onClick={toggleModal} className={overlay}>
       <div className={modal}>
         <img className={modalImage} src={modalImg} alt="Big Modal Pic" />
       </div>

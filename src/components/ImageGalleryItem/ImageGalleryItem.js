@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import s from "./ImageGalleryItem.module.css";
 
-function ImageGalleryItem({ imgPreview, imgModal, openModal }) {
+function ImageGalleryItem({ imgPreview, imgModal, toggleModal }) {
   return (
     <li
       onClick={() => {
-        openModal(imgModal);
+        toggleModal(imgModal);
       }}
       className={s.ImageGalleryItem}
     >
