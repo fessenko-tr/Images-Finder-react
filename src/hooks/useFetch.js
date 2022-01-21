@@ -42,12 +42,20 @@ export default function useFetch() {
     fetchPics();
   }, [userInput, page]);
 
-  useEffect(() => {
-    if (page === 1) {
-      return;
-    }
-    window.scrollTo({ top: 400, behavior: "smooth" });
-  }, [pics]);
+  // useEffect(() => {
+  //   var galleryChildren = document.querySelector("ul").childElementCount;
+
+  //   const scrollDistance = (galleryChildren / 4) * 260;
+  //   console.log("scrollDistance :", scrollDistance);
+
+  //   if (page === 1) {
+  //     return;
+  //   }
+  //   window.scrollTo({
+  //     top: scrollDistance,
+  //     behavior: "smooth",
+  //   });
+  // }, [pics]); ТА БЛЯ КАК
 
   function handleUserInput(userValue) {
     if (userValue === userInput && page === 1) {
